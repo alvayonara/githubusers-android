@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: '../shared_dependencies.gradle'
+
+def baseURLPropertiesFile = rootProject.file("baseurl.properties")
+def baseURLProperties = new Properties()
+baseURLProperties.load(new FileInputStream(baseURLPropertiesFile))
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField "String", "BASE_URL", baseURLProperties['BASE_URL']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    kapt {
+        correctErrorTypes = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptorVersion"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiCodegenVersion"
+
+    // Chucker
+    debugImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
+
+    // Kotlin Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutinesVersion"
+
+    // Lifecycle
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+
+    // ViewModel KTX
+    api "androidx.activity:activity-ktx:$activityKtxVersion"
+    api "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+}

@@ -1,22 +1,6 @@
 <resources>
     <string name="app_name">GitHub Apps</string>
-    <string name="txt_github_header">GitHub</string>
-    <string name="txt_discover_header">Discover Users</string>
-    <string name="txt_repository_url">Repository URL</string>
-    <string name="txt_id">User ID: %s</string>
     <string name="txt_snackbar">An Error Occurred. %s</string>
     <string name="txt_retry_snackbar">RETRY</string>
     <string name="txt_profile">Name: %1$s\n\nUsername: %2$s\n\nEmail: %3$s\n\nCreated at: %4$s</string>
-    <string name="txt_error_header">An Error Occurred</string>
-
-    <!-- Dummy Text -->
-    <string name="txt_dummy_id">User ID: 42828307</string>
-    <string name="txt_dummy_username">alvayonara</string>
-    <string name="txt_dummy_repository_url">https://api.github.com/users/alvayonara/repos</string>
-    <string name="txt_dummy_snackbar">An Error Occurred. 401</string>
-    <string name="txt_dummy_name">Alva Yonara Puramandya</string>
-    <string name="txt_dummy_email">alvayonara@outlook.com</string>
-    <string name="txt_dummy_created_at">Created at Mar 20 2016</string>
-    <string name="txt_dummy_error_subtitle">403</string>
-    <string name="txt_retry_button">Retry</string>
 </resources>

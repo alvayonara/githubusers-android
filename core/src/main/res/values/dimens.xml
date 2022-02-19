@@ -19,4 +19,19 @@
     <dimen name="spacing_xmmlarge">45dp</dimen>
     <dimen name="spacing_xxxlarge">50dp</dimen>
     <dimen name="spacing_xxxxlarge">55dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+
+    <!-- Image Size -->
+    <dimen name="image_40">40dp</dimen>
+    <dimen name="image_100">100dp</dimen>
+
+    <!-- CardView Size -->
+    <dimen name="card_view_130">130dp</dimen>
 </resources>

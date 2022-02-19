@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text -->
+    <style name="TextContent">
+        <item name="android:fontFamily">@font/nunitosans_regular</item>
+    </style>
+
+    <style name="TextContent.10">
+        <item name="android:textSize">@dimen/text_size_10sp</item>
+    </style>
+
+    <style name="TextContent.10.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextContent.10.White.EllipsizeEnd">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextContent.14">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+    </style>
+
+    <style name="TextContent.14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextContent.14.White.EllipsizeEnd">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextContent.Heading">
+        <item name="android:fontFamily">@font/nunitosans_extrabold</item>
+    </style>
+
+    <style name="TextContent.Heading.14">
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+    </style>
+
+    <style name="TextContent.Heading.14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextContent.Heading.16">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <style name="TextContent.Heading.16.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextContent.Heading.22">
+        <item name="android:textSize">@dimen/text_size_22sp</item>
+    </style>
+
+    <style name="TextContent.Heading.22.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextContent.Heading2">
+        <item name="android:fontFamily">@font/nunitosans_bold</item>
+    </style>
+
+    <style name="TextContent.Heading2.10">
+        <item name="android:textSize">@dimen/text_size_10sp</item>
+    </style>
+
+    <style name="TextContent.Heading2.10.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Image -->
+    <style name="ImageStyle_Corners_Rounded">
+        <item name="cornerSize">@dimen/spacing_middle</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <!-- Progress Bar -->
+    <style name="ProgressBar">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateTintMode">src_atop</item>
+        <item name="android:indeterminateTint">@color/white</item>
+    </style>
+
+    <style name="ProgressBar.28">
+        <item name="android:layout_width">@dimen/spacing_mxxxlarge</item>
+        <item name="android:layout_height">@dimen/spacing_mxxxlarge</item>
+    </style>
+</resources>
