@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alvayonara.github_apps.GitHubApplication
 import com.alvayonara.github_apps.R
 import com.alvayonara.github_apps.core.base.BaseFragment
-import com.alvayonara.github_apps.core.data.source.Result
-import com.alvayonara.github_apps.core.ui.ViewModelFactory
 import com.alvayonara.github_apps.core.ui.user.UserController
 import com.alvayonara.github_apps.core.utils.*
+import com.alvayonara.github_apps.core.data.source.Result
 import com.alvayonara.github_apps.databinding.FragmentUserBinding
+import com.alvayonara.github_apps.ui.ViewModelFactory
 import javax.inject.Inject
 
 class UserFragment : BaseFragment<FragmentUserBinding>() {
@@ -58,8 +58,8 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
             addOnScrollListener(object : RecyclerViewLoadMore() {
                 override fun onLoadMore() {
                     /**
-                     * Check if fetch data success then increment current page,
-                     * So it prevent increment current page when fetching data failed.
+                     * Check if fetch data success then increment current page.
+                     * So it will prevent increment page when fetch data failed.
                      */
                     if (!_isScrolled) {
                         _isScrolled = true
@@ -78,8 +78,11 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
         userViewModel.apply {
             users.observe(viewLifecycleOwner) { result ->
                 when (result.status) {
-                    Result.Status.LOADING -> showLoading(true)
-                    Result.Status.SUCCESS -> {
+                    Result.Status.LOADING -> showLoading(
+                        true
+                    )
+                    Result.Status.SUCCESS
+                    -> {
                         showLoading(false)
                         result.body?.let { userController.setUsers(it.toMutableList()) }
                     }
@@ -123,7 +126,9 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
 
             profile.observe(viewLifecycleOwner) { result ->
                 when (result.status) {
-                    Result.Status.LOADING -> showLoading(true)
+                    Result.Status.LOADING -> showLoading(
+                        true
+                    )
                     Result.Status.SUCCESS -> {
                         showLoading(false)
                         result.body?.let {
@@ -133,7 +138,10 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
                                     it.name,
                                     it.login,
                                     it.email,
-                                    it.createdAt
+                                    it.createdAt.dateTimeConvert(
+                                        Constant.DateFormat.FORMAT_DATE_TIMEZONE,
+                                        Constant.DateFormat.FORMAT_DATE_MMM_DD_YYYY
+                                    )
                                 )
                             )
                         }

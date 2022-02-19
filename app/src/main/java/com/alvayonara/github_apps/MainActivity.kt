@@ -1,7 +1,6 @@
 package com.alvayonara.github_apps
 
 import android.view.LayoutInflater
-import androidx.navigation.ui.AppBarConfiguration
 import com.alvayonara.github_apps.core.base.BaseActivity
 import com.alvayonara.github_apps.databinding.ActivityMainBinding
 
