@@ -1,4 +1,4 @@
-package com.alvayonara.github_apps.user
+package com.alvayonara.github_apps.ui.user
 
 import androidx.lifecycle.*
 import com.alvayonara.github_apps.core.data.source.Result

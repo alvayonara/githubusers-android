@@ -1,4 +1,4 @@
-package com.alvayonara.github_apps
+package com.alvayonara.github_apps.ui.main
 
 import android.view.LayoutInflater
 import com.alvayonara.github_apps.core.base.BaseActivity

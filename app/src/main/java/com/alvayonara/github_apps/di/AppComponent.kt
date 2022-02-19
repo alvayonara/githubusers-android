@@ -2,7 +2,7 @@ package com.alvayonara.github_apps.di
 
 import android.content.Context
 import com.alvayonara.github_apps.core.di.CoreComponent
-import com.alvayonara.github_apps.user.UserFragment
+import com.alvayonara.github_apps.ui.user.UserFragment
 import dagger.BindsInstance
 import dagger.Component
 

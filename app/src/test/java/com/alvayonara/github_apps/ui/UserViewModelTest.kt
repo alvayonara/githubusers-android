@@ -5,7 +5,7 @@ import com.alvayonara.github_apps.core.data.source.Result
 import com.alvayonara.github_apps.core.domain.model.profile.Profile
 import com.alvayonara.github_apps.core.domain.model.user.User
 import com.alvayonara.github_apps.core.domain.usecase.UserUseCase
-import com.alvayonara.github_apps.user.UserViewModel
+import com.alvayonara.github_apps.ui.user.UserViewModel
 import com.alvayonara.github_apps.utils.BaseUnitTest
 import com.alvayonara.github_apps.utils.getOrAwaitValue
 import io.mockk.coEvery
