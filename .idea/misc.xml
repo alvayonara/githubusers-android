@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.38981481481481484" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.2735" />
+        <entry key="app/src/main/res/drawable/ic_github.xml" value="0.164" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2155" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1591424472090127" />
+        <entry key="app/src/main/res/layout/bg_snackbar.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/bg_toast.xml" value="0.23001282599401454" />
+        <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.22060709705002138" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_list_header.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_list_load_more.xml" value="0.31936725096194957" />
+        <entry key="app/src/main/res/layout/item_list_loader.xml" value="0.31936725096194957" />
+        <entry key="app/src/main/res/layout/item_list_loading.xml" value="0.31936725096194957" />
+        <entry key="app/src/main/res/layout/item_list_user.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_loader.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_loading.xml" value="1.248546511627907" />
+        <entry key="app/src/main/res/layout/layout_error.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/layout_loading.xml" value="0.31936725096194957" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

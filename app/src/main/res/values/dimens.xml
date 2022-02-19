@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_small">3dp</dimen>
+    <dimen name="spacing_smallx">4dp</dimen>
+    <dimen name="spacing_medium">6dp</dimen>
+    <dimen name="spacing_xmedium">7dp</dimen>
+    <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_xlarge">14dp</dimen>
+    <dimen name="spacing_large">15dp</dimen>
+    <dimen name="spacing_smlarge">18dp</dimen>
+    <dimen name="spacing_mlarge">20dp</dimen>
+    <dimen name="spacing_mxlarge">24dp</dimen>
+    <dimen name="spacing_mxxlarge">26dp</dimen>
+    <dimen name="spacing_mxxxlarge">28dp</dimen>
+    <dimen name="spacing_xxlarge">32dp</dimen>
+    <dimen name="spacing_xmlarge">40dp</dimen>
+    <dimen name="spacing_xmmlarge">45dp</dimen>
+    <dimen name="spacing_xxxlarge">50dp</dimen>
+    <dimen name="spacing_xxxxlarge">55dp</dimen>
+
+    <!-- Text Size -->
+    <dimen name="text_size_10sp">10sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_22sp">22sp</dimen>
+
+    <!-- Image Size -->
+    <dimen name="image_40">40dp</dimen>
+    <dimen name="image_100">100dp</dimen>
+
+    <!-- CardView Size -->
+    <dimen name="card_view_130">130dp</dimen>
+</resources>
