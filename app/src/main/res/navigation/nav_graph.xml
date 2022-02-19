@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.alvayonara.github_apps.user.UserFragment"
+        android:name="com.alvayonara.github_apps.ui.user.UserFragment"
         android:label="UserFragment" />
 </navigation>

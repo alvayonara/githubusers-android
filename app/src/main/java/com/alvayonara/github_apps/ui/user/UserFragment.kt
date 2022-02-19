@@ -1,4 +1,4 @@
-package com.alvayonara.github_apps.user
+package com.alvayonara.github_apps.ui.user
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
