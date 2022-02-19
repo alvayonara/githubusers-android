@@ -8,7 +8,7 @@ import com.alvayonara.github_apps.di.AppComponent
 import com.alvayonara.github_apps.di.DaggerAppComponent
 import timber.log.Timber
 
-class GitHubApplication: Application() {
+class GitHubApplication : Application() {
 
     private val coreComponent: CoreComponent by lazy {
         DaggerCoreComponent.factory().create(applicationContext)
