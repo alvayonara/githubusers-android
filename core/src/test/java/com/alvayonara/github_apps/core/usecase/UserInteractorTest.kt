@@ -4,6 +4,7 @@ import com.alvayonara.github_apps.core.data.source.UserRepository
 import com.alvayonara.github_apps.core.domain.model.profile.Profile
 import com.alvayonara.github_apps.core.domain.model.user.User
 import com.alvayonara.github_apps.core.domain.usecase.UserInteractor
+import com.alvayonara.github_apps.core.utils.DataDummy
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -35,14 +36,7 @@ class UserInteractorTest {
     fun `given success response then return list of users`() = runBlocking {
         // given
         val nextPage = 10
-        val users = listOf(
-            User(
-                avatarUrl = "https://avatars.githubusercontent.com/u/42828307?v=4",
-                id = "42828307",
-                login = "alvayonara",
-                reposUrl = "https://api.github.com/users/alvayonara/repos"
-            )
-        )
+        val users = DataDummy.getUser()
         coEvery { userRepository.getUsers(nextPage) } returns users
 
         // when
@@ -92,13 +86,8 @@ class UserInteractorTest {
     @Test
     fun `given success response then return profile`() = runBlocking {
         // given
-        val username = "alvayonara"
-        val profile = Profile(
-            createdAt = "2018-08-30T05:36:23Z",
-            email = "alvayonara@outlook.com",
-            login = "alvayonara",
-            name = "Alva Yonara Puramandya"
-        )
+        val username = DataDummy.getProfile().login
+        val profile = DataDummy.getProfile()
         coEvery { userRepository.getProfile(username) } returns profile
 
         // when
@@ -111,7 +100,7 @@ class UserInteractorTest {
     @Test(expected = IOException::class)
     fun `given network is error when get profile then throw IOException`() = runTest {
         // given
-        val username = "alvayonara"
+        val username = DataDummy.getProfile().login
         coEvery { userRepository.getProfile(username) } throws IOException()
 
         // when
@@ -121,7 +110,7 @@ class UserInteractorTest {
     @Test(expected = HttpException::class)
     fun `given unauthorized network when get profile then throw HttpException`() = runTest {
         // given
-        val username = "alvayonara"
+        val username = DataDummy.getProfile().login
         val responseUnauthorized =
             Response.error<Profile>(HttpURLConnection.HTTP_UNAUTHORIZED, mockk(relaxed = true))
         coEvery { userRepository.getProfile(username) } throws HttpException(responseUnauthorized)
@@ -133,7 +122,7 @@ class UserInteractorTest {
     @Test(expected = HttpException::class)
     fun `given forbidden network when get profile then throw HttpException`() = runTest {
         // given
-        val username = "alvayonara"
+        val username = DataDummy.getProfile().login
         val responseForbidden =
             Response.error<Profile>(HttpURLConnection.HTTP_FORBIDDEN, mockk(relaxed = true))
         coEvery { userRepository.getProfile(username) } throws HttpException(responseForbidden)
