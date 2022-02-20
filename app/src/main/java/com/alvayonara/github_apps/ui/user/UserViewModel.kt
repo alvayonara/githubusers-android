@@ -15,7 +15,6 @@ class UserViewModel @Inject constructor(private val userUseCase: UserUseCase) : 
     val users: LiveData<Result<List<User>>> get() = _users
 
     private val _nextPage: MutableLiveData<Int> = MutableLiveData()
-
     private val _username: MutableLiveData<String> = MutableLiveData()
 
     init {

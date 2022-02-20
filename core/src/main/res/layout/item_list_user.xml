@@ -14,6 +14,7 @@
         android:id="@+id/iv_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:foreground="@color/shark_88"
         android:scaleType="centerCrop"
         tools:ignore="ContentDescription"
         tools:src="@drawable/dummy_profile" />

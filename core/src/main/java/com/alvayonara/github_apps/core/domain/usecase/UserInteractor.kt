@@ -5,7 +5,8 @@ import com.alvayonara.github_apps.core.domain.model.user.User
 import com.alvayonara.github_apps.core.domain.repository.IUserRepository
 import javax.inject.Inject
 
-class UserInteractor @Inject constructor(private val userRepository: IUserRepository) : UserUseCase {
+class UserInteractor @Inject constructor(private val userRepository: IUserRepository) :
+    UserUseCase {
 
     override suspend fun getUsers(since: Int): List<User> =
         userRepository.getUsers(since)

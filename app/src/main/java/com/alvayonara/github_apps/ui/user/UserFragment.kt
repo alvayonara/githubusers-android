@@ -78,11 +78,8 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
         userViewModel.apply {
             users.observe(viewLifecycleOwner) { result ->
                 when (result.status) {
-                    Result.Status.LOADING -> showLoading(
-                        true
-                    )
-                    Result.Status.SUCCESS
-                    -> {
+                    Result.Status.LOADING -> showLoading(true)
+                    Result.Status.SUCCESS -> {
                         showLoading(false)
                         result.body?.let { userController.setUsers(it.toMutableList()) }
                     }
@@ -126,9 +123,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
 
             profile.observe(viewLifecycleOwner) { result ->
                 when (result.status) {
-                    Result.Status.LOADING -> showLoading(
-                        true
-                    )
+                    Result.Status.LOADING -> showLoading(true)
                     Result.Status.SUCCESS -> {
                         showLoading(false)
                         result.body?.let {
