@@ -41,10 +41,17 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
     }
 
     override fun setupView() {
-        binding.srUser.setOnRefreshListener {
-            binding.srUser.hideLoading()
-            resetPage()
-            userViewModel.getUsers()
+        binding.apply {
+            srUser.setOnRefreshListener {
+                binding.srUser.hideLoading()
+                resetPage()
+                userViewModel.getUsers()
+            }
+
+            lytError.clError.setOnClickListener {
+                binding.lytError.root.gone()
+                userViewModel.getUsers()
+            }
         }
     }
 
@@ -59,7 +66,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
                 override fun onLoadMore() {
                     /**
                      * Check if fetch data success then increment current page.
-                     * So it will prevent increment page when fetch data failed.
+                     * So it will prevent incrementing when fetch data failed.
                      */
                     if (!_isScrolled) {
                         _isScrolled = true
@@ -86,8 +93,9 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
                     Result.Status.ERROR -> {
                         showLoading(false)
                         result.throwable?.let { throwable ->
+                            showError(throwable)
                             binding.sbUser.showErrorSnackbar(
-                                text = getString(R.string.txt_snackbar, throwable.getThrowable()),
+                                text = getString(R.string.txt_error, throwable.getThrowable()),
                                 onRetry = {
                                     userViewModel.getUsers()
                                 }
@@ -111,7 +119,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
                         loadMoreState(false)
                         result.throwable?.let { throwable ->
                             binding.sbUser.showErrorSnackbar(
-                                text = getString(R.string.txt_snackbar, throwable.getThrowable()),
+                                text = getString(R.string.txt_error, throwable.getThrowable()),
                                 onRetry = {
                                     userViewModel.setNextPage(_currentPage)
                                 }
@@ -145,7 +153,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
                         showLoading(false)
                         result.throwable?.let { throwable ->
                             binding.sbUser.showErrorSnackbar(
-                                text = getString(R.string.txt_snackbar, throwable.getThrowable()),
+                                text = getString(R.string.txt_error, throwable.getThrowable()),
                                 onRetry = {
                                     userViewModel.setUsername(_username)
                                 }
@@ -162,6 +170,13 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
             binding.pbUser.visible()
         } else {
             binding.pbUser.gone()
+        }
+    }
+
+    private fun showError(throwable: Throwable) {
+        binding.lytError.apply {
+            tvSubtitleError.text = getString(R.string.txt_error, throwable.getThrowable())
+            root.visible()
         }
     }
 
