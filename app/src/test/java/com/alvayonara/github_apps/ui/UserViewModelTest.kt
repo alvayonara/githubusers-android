@@ -5,6 +5,7 @@ import com.alvayonara.github_apps.core.data.source.Result
 import com.alvayonara.github_apps.core.domain.model.profile.Profile
 import com.alvayonara.github_apps.core.domain.model.user.User
 import com.alvayonara.github_apps.core.domain.usecase.UserUseCase
+import com.alvayonara.github_apps.core.utils.DataDummy
 import com.alvayonara.github_apps.ui.user.UserViewModel
 import com.alvayonara.github_apps.utils.BaseUnitTest
 import com.alvayonara.github_apps.utils.getOrAwaitValue
@@ -46,14 +47,7 @@ class UserViewModelTest : BaseUnitTest() {
     @Test
     fun `given success response when get list of users should return result`() {
         // given
-        val userResponse = listOf(
-            User(
-                avatarUrl = "https://avatars.githubusercontent.com/u/42828307?v=4",
-                id = "42828307",
-                login = "alvayonara",
-                reposUrl = "https://api.github.com/users/alvayonara/repos"
-            )
-        )
+        val userResponse = DataDummy.getUser()
         coEvery { userUseCase.getUsers(any()) } returns userResponse
 
         // when
@@ -82,14 +76,7 @@ class UserViewModelTest : BaseUnitTest() {
     @Test
     fun `given success response when get next page list of users should emit result`() {
         // given
-        val userResponse = listOf(
-            User(
-                avatarUrl = "https://avatars.githubusercontent.com/u/42828307?v=4",
-                id = "42828307",
-                login = "alvayonara",
-                reposUrl = "https://api.github.com/users/alvayonara/repos"
-            )
-        )
+        val userResponse = DataDummy.getUser()
         coEvery { userUseCase.getUsers(any()) } returns userResponse
 
         // when
@@ -118,16 +105,11 @@ class UserViewModelTest : BaseUnitTest() {
     @Test
     fun `given success response when get profile should emit result`() {
         // given
-        val profileResponse = Profile(
-            createdAt = "2018-08-30T05:36:23Z",
-            email = "alvayonara@outlook.com",
-            login = "alvayonara",
-            name = "Alva Yonara Puramandya"
-        )
+        val profileResponse = DataDummy.getProfile()
         coEvery { userUseCase.getProfile(any()) } returns profileResponse
 
         // when
-        userViewModel.setUsername("alvayonara")
+        userViewModel.setUsername(profileResponse.login)
 
         // then
         assertNotNull(userViewModel.profile.getOrAwaitValue())
@@ -140,7 +122,7 @@ class UserViewModelTest : BaseUnitTest() {
         coEvery { userUseCase.getProfile(any()) } throws IOException()
 
         // when
-        userViewModel.setUsername("alvayonara")
+        userViewModel.setUsername(DataDummy.getProfile().login)
 
         // then
         assertNotNull(userViewModel.profile.getOrAwaitValue())
