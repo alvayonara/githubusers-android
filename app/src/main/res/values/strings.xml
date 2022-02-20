@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">GitHub Apps</string>
-    <string name="txt_snackbar">An Error Occurred. %s</string>
+    <string name="txt_error">An Error Occurred. %s</string>
     <string name="txt_retry_snackbar">RETRY</string>
     <string name="txt_profile">Name: %1$s\n\nUsername: %2$s\n\nEmail: %3$s\n\nCreated at: %4$s</string>
+    <string name="txt_header_error">Whoops!</string>
+    <string name="txt_caption_error">Tap to retry</string>
 </resources>

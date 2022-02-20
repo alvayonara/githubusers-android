@@ -17,6 +17,14 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="TextContent.12">
+        <item name="android:textSize">@dimen/text_size_12sp</item>
+    </style>
+
+    <style name="TextContent.12.Grey50">
+        <item name="android:textColor">@color/grey_50</item>
+    </style>
+
     <style name="TextContent.14">
         <item name="android:textSize">@dimen/text_size_14sp</item>
     </style>
