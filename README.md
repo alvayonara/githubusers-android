@@ -1,4 +1,4 @@
-# GitHubApps
+# GitHubUsers
 A GitHub user Android apps using Dagger 2, MVVM, Modularization, Clean Architecture, and Airbnb Epoxy.
 There are 2 features on this apps:
 1. Discover GitHub users.
